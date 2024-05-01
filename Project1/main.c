@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "case.h" // Include header file containing warehouse-related functions
 
 int main() {
@@ -9,6 +10,8 @@ int main() {
     char warehouseLocation[50];
     char itemName[50];
     int itemQuantity;
+    clock_t start, end;
+    double cpu_time_used;
 
     do {
         printf("\n===== MENU =====\n");
@@ -20,6 +23,7 @@ int main() {
         printf("6. Exit\n");
         printf("Enter your choice: ");
         scanf_s("%d", &choice);
+        start = clock();  // Start timer
 
         switch (choice) {
         case 1:
@@ -74,6 +78,10 @@ int main() {
         default:
             printf("Invalid choice! Please enter a valid option.\n");
         }
+        end = clock();  // End timer
+        cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+        printf("Time taken for operation: %f seconds\n", cpu_time_used);
+
     } while (choice != 6);
 
     return 0;

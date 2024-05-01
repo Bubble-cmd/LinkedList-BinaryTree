@@ -155,3 +155,57 @@ Warehouse* searchWarehouse(Warehouse* head, const char location[]) {
     }
     return NULL; // Warehouse not found
 }
+
+
+// Test functions and implementation
+
+/*
+
+void testCreateItem() {
+    printf(" Item Creat..\n");
+    Item* item = createItem("ssd", 100);
+    if (item != NULL && strcmp(item->name, "ssd") == 0 && item->quantity == 100) {
+        printf("Done");
+    } else {
+        printf("FAIL");
+    }
+}
+
+void testInsertItem() {
+    printf(" Item Insert...\n");
+    Item* root = NULL;
+    root = insertItem(root, "dfg", 50);
+    root = insertItem(root, "cccvb", 150);
+    root = insertItem(root, "fghfh", 100);
+
+    if (searchItem(root, "dfg") != NULL) {
+        printf("insert");
+    } else {
+        printf("FAIL");
+    }
+
+    // Clean up
+    deleteItem(root, "dfg");
+    deleteItem(root, "cccvb");
+    deleteItem(root, "fghfh");
+}
+
+void testCreateAndInsertWarehouse() {
+    printf(" Warehouse Creat and Item Insert\n");
+    Warehouse* head = NULL;
+    insertWarehouse(&head, "Warehouse A");
+    head->root = insertItem(head->root, "dfg", 200);
+
+    Warehouse* foundWarehouse = searchWarehouse(head, "Warehouse A");
+    if (foundWarehouse != NULL && searchItem(foundWarehouse->root, "dfg") != NULL) {
+        printf("Done");
+    } else {
+        printf("FAIL");
+    }
+
+    // Clean up
+}
+
+
+
+*/
